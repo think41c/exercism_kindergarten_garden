@@ -78,7 +78,6 @@ class TestFullGarden < MiniTest::Unit::TestCase
   end
 
   def test_larry
-    skip
     assert_equal [:grass, :violets, :clover, :violets], garden.larry
   end
 end
@@ -97,17 +96,14 @@ class DisorderedTest < MiniTest::Unit::TestCase
   end
 
   def test_roger
-    skip
     assert_equal [:radishes, :radishes, :grass, :clover], garden.roger
   end
 
   def test_samantha
-    skip
     assert_equal [:grass, :violets, :clover, :grass], garden.samantha
   end
 
   def test_xander
-    skip
     assert_equal [:radishes, :grass, :clover, :violets], garden.xander
   end
 end
@@ -127,7 +123,6 @@ class TwoGardensDifferentStudents < MiniTest::Unit::TestCase
   end
 
   def test_bob_and_charlie_per_garden
-    skip
     assert_equal [:radishes, :radishes, :grass, :clover], garden_1.bob
     assert_equal [:violets, :clover, :radishes, :violets], garden_2.bob
     assert_equal [:grass, :violets, :clover, :grass], garden_1.charlie

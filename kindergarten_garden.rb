@@ -7,9 +7,8 @@ class Garden
                                 Ileana Joseph Kincaid Larry
                                 )
                  )
-    @diagram   = diagram
-    @students  = students
-    @students  = students
+    @diagram   = diagram.gsub(" ","")
+    @students  = students.sort
   end
 
   def garden_assigner
@@ -18,7 +17,6 @@ class Garden
     @diagram_array  = @diagram.split("")
 
     @diagram_array.each_with_index do |code, x|
-      
       if loop_counter == 2 then 
         student_counter +=  1
         loop_counter = 0 
@@ -29,11 +27,10 @@ class Garden
         loop_counter    = -1
       else
           @students[student_counter] << code
-          puts @students[student_counter]
       end
+
       loop_counter += 1
     end
-
   end
 
   def garden_decoder(pots)
@@ -51,7 +48,7 @@ class Garden
         garden_decoded << :violets
       end
     end
-    p garden_decoded
+    garden_decoded
   end
 
 
@@ -67,7 +64,6 @@ class Garden
 
     alices_pots = @students[alice_ref]
     alices_pots = alices_pots[-4..-1]
-    puts alices_pots
     garden_decoder(alices_pots)
   end
 
@@ -224,6 +220,67 @@ def kincaid
   garden_decoder(kincaid_ref)
 end
 
+def roger
+  roger_ref = 0   # Find out later what index Alice is in
+    garden_assigner
+    @students.each_with_index do |student, x|
+      name = student.upcase
+      if name.include?("ROGER")
+        roger_ref = x 
+      end
+    end
+
+    roger_ref = @students[roger_ref]
+    roger_ref = roger_ref[-4..-1]
+    garden_decoder(roger_ref)
+end
+
+def samantha 
+  samantha_ref = 0   # Find out later what index Alice is in
+    garden_assigner
+    @students.each_with_index do |student, x|
+      name = student.upcase
+      if name.include?("SAMANTHA")
+        samantha_ref = x 
+      end
+    end
+
+    samanthas_pots = @students[samantha_ref]
+    samanthas_pots = samanthas_pots[-4..-1]
+    garden_decoder(samanthas_pots)
+end
+
+def xander
+  xander_ref = 0   # Find out later what index Alice is in
+    garden_assigner
+    @students.each_with_index do |student, x|
+      name = student.upcase
+      if name.include?("XANDER")
+        xander_ref = x 
+      end
+    end
+
+    xanders_pots = @students[xander_ref]
+    xanders_pots = xanders_pots[-4..-1]
+    garden_decoder(xanders_pots)
+end
+
+
+def larry
+  larry_ref = 0   # Find out later what index Alice is in
+    garden_assigner
+    @students.each_with_index do |student, x|
+      name = student.upcase
+      if name.include?("LARRY")
+        larry_ref = x 
+      end
+    end
+
+    larrys_pots = @students[larry_ref]
+    larrys_pots = larrys_pots[-4..-1]
+    garden_decoder(larrys_pots)
+end
+
 def patricia
   patricia_ref = 0   # Find out later what index Alice is in
     garden_assigner
@@ -241,7 +298,7 @@ end
 
 end
 
-garden = Garden.new("VVCG\nVVRC")
-garden.garden_assigner
-garden.alice
+# garden = Garden.new("VVCG\nVVRC")
+# garden.garden_assigner
+# garden.alice
 # garden.bob
