@@ -81,19 +81,8 @@ class Garden
   end
 
   def eve
-      eve_ref = 0
-      garden_assigner
-      @students.each_with_index do |student, x|
-        name = student.upcase
-        if name.include?("EVE")
-          eve_ref = x
-        end
-      end
-
-      eves_pots = @students[eve_ref]
-      eves_pots = eves_pots[-4..-1]
-      garden_decoder(eves_pots)
-    end
+    student_pot_generator("EVE")   
+  end
 
   def fred
     fred_ref = 0
