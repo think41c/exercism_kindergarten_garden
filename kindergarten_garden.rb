@@ -164,12 +164,11 @@ class Garden
     student_ref = 0
     garden_assigner
     @students.each_with_index do |student, x|
-      name = student.upcase
-      if name.include?("HARRIET")
+      if student.upcase.include?("HARRIET")
         student_ref = x 
       end
     end
-    
+
     student_pots = @students[student_ref][-4..-1]
     garden_decoder(student_pots)
   end
