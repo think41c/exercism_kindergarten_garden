@@ -161,18 +161,17 @@ class Garden
   end
 
   def harriet
-    harriet_ref = 0
+    student_ref = 0
     garden_assigner
     @students.each_with_index do |student, x|
       name = student.upcase
       if name.include?("HARRIET")
-        harriet_ref = x 
+        student_ref = x 
       end
     end
-
-    harriet_ref = @students[harriet_ref]
-    harriet_ref = harriet_ref[-4..-1]
-    garden_decoder(harriet_ref)
+    
+    student_pots = @students[student_ref][-4..-1]
+    garden_decoder(student_pots)
   end
 
   def ileana
