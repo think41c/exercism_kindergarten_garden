@@ -51,69 +51,34 @@ class Garden
     garden_decoded
   end
 
-
-  def alice
-    alice_ref = 0  
+  def student_pot_generator(name)
+    student_ref = 0
     garden_assigner
     @students.each_with_index do |student, x|
-      name = student.upcase
-      if name.include?("ALICE")
-        alice_ref = x 
+    if student.upcase.include?(name)
+        student_ref = x 
       end
     end
 
-    alices_pots = @students[alice_ref]
-    alices_pots = alices_pots[-4..-1]
-    garden_decoder(alices_pots)
+    student_pots = @students[student_ref][-4..-1]
+    garden_decoder(student_pots)  
   end
 
+  def alice
+    student_pot_generator("ALICE")
+  end  
+  
   def bob
-   bob_ref = 0   
-    garden_assigner
-    @students.each_with_index do |student, x|
-      name = student.upcase
-      if name.include?("BOB")
-        bob_ref = x 
-      end
-    end
-
-    bobs_pots = @students[bob_ref]
-    bobs_pots = bobs_pots[-4..-1]
-    garden_decoder(bobs_pots)
-
+    student_pot_generator("BOB")
   end
 
   def charlie
-   charlie_ref = 0   
-    garden_assigner
-    @students.each_with_index do |student, x|
-      name = student.upcase
-      if name.include?("CHARLIE")
-        charlie_ref = x 
-      end
-    end
-
-    charlies_pots = @students[charlie_ref]
-    charlies_pots = charlies_pots[-4..-1]
-    garden_decoder(charlies_pots)
-
+    student_pot_generator("CHARLIE")
   end
 
   def david
-    david_ref = 0   
-    garden_assigner
-    @students.each_with_index do |student, x|
-      name = student.upcase
-      if name.include?("DAVID")
-        david_ref = x 
-      end
-    end
-
-    davids_pots = @students[david_ref]
-    davids_pots = davids_pots[-4..-1]
-    garden_decoder(davids_pots)
+    student_pot_generator("DAVID")
   end
-
 
   def eve
       eve_ref = 0
@@ -174,17 +139,16 @@ class Garden
   end
 
   def ileana
-    ileana_ref = 0
+    student_ref = 0
     garden_assigner
     @students.each_with_index do |student, x|
-      name = student.upcase
-      if name.include?("ILEANA")
-        ileana_ref = x 
+      if student.upcase.include?("ILEANA")
+        student_ref = x 
       end
     end
 
-    ileanas_pots = @students[ileana_ref]
-    garden_decoder(ileanas_pots[-4..-1])
+    student_pots = @students[student_ref][-4..-1]
+    garden_decoder(student_pots)
   end
 
   def joseph
