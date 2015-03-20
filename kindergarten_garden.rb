@@ -105,89 +105,28 @@ class Garden
   end
 
   def kincaid
-    kincaid_ref = 0
-    garden_assigner
-    @students.each_with_index do |student, x|
-      name = student.upcase
-      if name.include?("KINCAID")
-        kincaid_ref = x 
-      end
-    end
-
-    kincaid_ref = @students[kincaid_ref]
-    kincaid_ref = kincaid_ref[-4..-1]
-    garden_decoder(kincaid_ref)
+    student_pot_generator("KINCAID")
   end
 
   def roger
-    roger_ref = 0
-    garden_assigner
-    @students.each_with_index do |student, x|
-      name = student.upcase
-      if name.include?("ROGER")
-        roger_ref = x 
-      end
-    end
-
-    roger_ref = @students[roger_ref]
-    garden_decoder(roger_ref[-4..-1])
+    student_pot_generator("ROGER")
   end
 
   def samantha 
-    samantha_ref = 0
-    garden_assigner
-    @students.each_with_index do |student, x|
-      name = student.upcase
-      if name.include?("SAMANTHA")
-        samantha_ref = x 
-      end
-    end
-
-    samanthas_pots = @students[samantha_ref]
-    garden_decoder(samanthas_pots[-4..-1])
+    student_pot_generator("SAMANTHA")
   end
 
   def xander
-    xander_ref = 0
-      garden_assigner
-      @students.each_with_index do |student, x|
-        name = student.upcase
-        if name.include?("XANDER")
-          xander_ref = x 
-        end
-      end
-
-      xanders_pots = @students[xander_ref]
-      garden_decoder(xanders_pots[-4..-1])
+    student_pot_generator("XANDER")
   end
 
 
   def larry
-    larry_ref = 0
-      garden_assigner
-      @students.each_with_index do |student, x|
-        name = student.upcase
-        if name.include?("LARRY")
-          larry_ref = x 
-        end
-      end
-
-      larrys_pots = @students[larry_ref]
-      garden_decoder(larrys_pots[-4..-1])
+    student_pot_generator("LARRY")
   end
 
   def patricia
-    patricia_ref = 0
-      garden_assigner
-      @students.each_with_index do |student, x|
-        name = student.upcase
-        if name.include?("PATRICIA")
-          patricia_ref = x 
-        end
-      end
-
-      patricias_pots = @students[patricia_ref]
-      garden_decoder(patricias_pots[-4..-1])
+    student_pot_generator("PARTICIA")
   end
 
 end
