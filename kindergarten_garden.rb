@@ -85,74 +85,23 @@ class Garden
   end
 
   def fred
-    fred_ref = 0
-    garden_assigner
-    @students.each_with_index do |student, x|
-      name = student.upcase
-      if name.include?("FRED")
-        fred_ref = x
-      end
-    end
-
-    freds_pots = @students[fred_ref]
-    freds_pots = freds_pots[-4..-1]
-    garden_decoder(freds_pots)
+    student_pot_generator("FRED")   
   end
 
   def ginny
-    ginny_ref = 0
-    garden_assigner
-    @students.each_with_index do |student, x|
-      name = student.upcase
-      if name.include?("GINNY")
-        ginny_ref = x 
-      end
-    end
-
-    ginnys_pots = @students[ginny_ref]
-    ginnys_pots = ginnys_pots[-4..-1]
-    garden_decoder(ginnys_pots)
+    student_pot_generator("GINNY")   
   end
 
   def harriet
-    student_ref = 0
-    garden_assigner
-    @students.each_with_index do |student, x|
-      if student.upcase.include?("HARRIET")
-        student_ref = x 
-      end
-    end
-
-    student_pots = @students[student_ref][-4..-1]
-    garden_decoder(student_pots)
+    student_pot_generator("HARRIET")   
   end
 
   def ileana
-    student_ref = 0
-    garden_assigner
-    @students.each_with_index do |student, x|
-      if student.upcase.include?("ILEANA")
-        student_ref = x 
-      end
-    end
-
-    student_pots = @students[student_ref][-4..-1]
-    garden_decoder(student_pots)
+    student_pot_generator("ILEANA")   
   end
 
   def joseph
-    joseph_ref = 0
-    garden_assigner
-    @students.each_with_index do |student, x|
-      name = student.upcase
-      if name.include?("JOSEPH")
-        joseph_ref = x 
-      end
-    end
-
-    josephs_pots = @students[joseph_ref]
-    josephs_pots = josephs_pots[-4..-1]
-    garden_decoder(josephs_pots)
+    student_pot_generator("JOSEPH")   
   end
 
   def kincaid
